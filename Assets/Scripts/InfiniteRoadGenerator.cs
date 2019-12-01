@@ -6,12 +6,13 @@ public class InfiniteRoadGenerator : MonoBehaviour
 {
     public GameObject Road;
     public GameObject Player;
-    public int Sayaç;
+    private int Sayaç;
     
 
     
     void Start()
     {
+        
         Sayaç = 1;
       
     }

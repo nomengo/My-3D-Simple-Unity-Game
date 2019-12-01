@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     Vector3 startPos;
     public int speed;
     public  bool isOnGround;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startPos = this.transform.position;
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -52,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
         if(collision.collider.tag == "Barrier")
         {
             this.transform.position = startPos;
+        }
+        if(collision.collider.tag == "Jumper")
+        {
+            rb.AddForce(new Vector3(0, 15, 0), ForceMode.Impulse);
         }
     
         
