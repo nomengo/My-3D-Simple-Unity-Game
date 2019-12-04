@@ -187,6 +187,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &486404809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6816494868432970029, guid: cdf0318fd84ba9c4dae0e565caace2a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 973139094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &870283852
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &870283853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +253,7 @@ PrefabInstance:
     - target: {fileID: 6816494868432970029, guid: cdf0318fd84ba9c4dae0e565caace2a2,
         type: 3}
       propertyPath: m_Name
-      value: Yer (1)
+      value: Yer 2
       objectReference: {fileID: 0}
     - target: {fileID: 6816494868432970033, guid: cdf0318fd84ba9c4dae0e565caace2a2,
         type: 3}
@@ -346,7 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3efead9da58a7a46bb4c82363f78012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Road: {fileID: 63726274}
+  Road1: {fileID: 63726274}
+  Road2: {fileID: 486404809}
   Player: {fileID: 1189733279}
 --- !u!4 &1795144634
 Transform:
@@ -433,6 +440,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493878326574855373, guid: 44e68395afae3bd46866d3c544a50ced,
+        type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e68395afae3bd46866d3c544a50ced, type: 3}
