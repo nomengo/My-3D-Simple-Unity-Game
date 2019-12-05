@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\InfiniteRoadGenerator.cs" />
     <Compile Include="Assets\Scripts\ObstacleGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <None Include="Assets\Poly City - Free Cartoon Pack\Readme.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nomen/Documents/My Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public int speed;
     public  bool isOnGround;
     private Rigidbody rb;
+    private bool Fail;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,30 +21,34 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isOnGround == true)
+       if(Fail == false)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (isOnGround == true)
             {
-                rb.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
-                isOnGround = false;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    rb.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
+                    isOnGround = false;
+                }
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(Vector3.back * speed * Time.deltaTime);
             }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
-        }
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -53,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if(collision.collider.tag == "Barrier")
         {
-            this.transform.position = startPos;
+            Fail = true;
+            Debug.Log("OYUN BİTTİ!!!");
         }
         if(collision.collider.tag == "Jumper")
         {
