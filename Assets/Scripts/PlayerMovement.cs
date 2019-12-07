@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public int speed;
     public  bool isOnGround;
     private Rigidbody rb;
-    private bool Fail;
+    public bool Fail;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +47,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.Translate(Vector3.back * speed * Time.deltaTime);
             }
+        }
+        else
+        {
+            Destroy(this.gameObject);
         }
         
     }

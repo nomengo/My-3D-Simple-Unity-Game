@@ -13,6 +13,8 @@ public class ObstacleGenerator : MonoBehaviour
     public Transform obstaclePrefab;
     public Transform obstaclePrefabother;
 
+    
+
     float zSpread;
     float lastzPos;
 
@@ -26,14 +28,16 @@ public class ObstacleGenerator : MonoBehaviour
     
     void Update()
     {
+      if(FindObjectOfType<CameraController>().Player!=null)
         if(playerTransform.position.z - lastzPos >= zSpread)
         {
             float lanePos = Random.Range(1, 2);
             lanePos = lanePos - 1;
-            Instantiate(obstaclePrefab, new Vector3(lanePos, 0f, lastzPos + zSpread + zDistance - 2), Quaternion.identity);
+            
+            Instantiate(obstaclePrefab, new Vector3(lanePos, -0.2f, lastzPos + zSpread + zDistance - 4), Quaternion.identity);
 
             lanePos = lanePos + 0;
-            Instantiate(obstaclePrefabother, new Vector3(lanePos, 0f, lastzPos + zSpread + zDistance + 2), Quaternion.identity);
+            Instantiate(obstaclePrefabother, new Vector3(lanePos, -0.3f, lastzPos + zSpread + zDistance + 3), Quaternion.identity);
 
             lastzPos += zSpread;
             zSpread = Random.Range(minSpread, maxSpread);
