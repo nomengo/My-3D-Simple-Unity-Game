@@ -6,47 +6,47 @@ public class PlayerMovement : MonoBehaviour
 {
     
     Vector3 startPos;
-    public int speed;
+
+    public int Basış;
+    public int Gelen;
+
+
+    public float speed;
     public  bool isOnGround;
     private Rigidbody rb;
     public bool Fail;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         startPos = this.transform.position;
+        Gelen = 1;
     }
     
 
-    // Update is called once per frame
+    
     void Update()
     {
        if(Fail == false)
         {
+            
             if (isOnGround == true)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    
                     rb.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
                     isOnGround = false;
+                    Gelen = Gelen + 2;
+
                 }
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
+                Basış = Basış + 1;
+                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, 0, speed), Time.deltaTime * (Basış - Gelen) );
             }
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.Translate(Vector3.back * speed * Time.deltaTime);
-            }
+            
         }
         else
         {

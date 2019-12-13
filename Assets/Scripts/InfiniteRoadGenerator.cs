@@ -32,14 +32,14 @@ public class InfiniteRoadGenerator : MonoBehaviour
             if (Player.transform.position.z >= 40 * Sayaç)
             {
                 Sayaç = Sayaç + 1;
-                Destroy(instanceCache, 8);
+                Destroy(instanceCache, 3);
                 instanceCache = Instantiate(Road1, new Vector3(0, 0, 40 * Sayaç), Quaternion.identity);
             }
             if (Player.transform.position.z >= 60 * Hak)
             {
                 Hak = Hak + 1;
-                Destroy(instanceCache, 8);
-                instanceCache = Instantiate(Road2, new Vector3(0, 0, 60 * Hak), Quaternion.identity);
+                Destroy(instanceCache, 3);
+                instanceCache = Instantiate(Road2, new Vector3(0, 0, 65 * Hak), Quaternion.identity);
             }
         }
         

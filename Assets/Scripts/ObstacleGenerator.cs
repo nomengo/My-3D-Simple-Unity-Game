@@ -10,10 +10,13 @@ public class ObstacleGenerator : MonoBehaviour
     public float maxSpread = 50;
 
     public Transform playerTransform;
-    public Transform obstaclePrefab;
-    public Transform obstaclePrefabother;
+    public GameObject obstaclePrefab;
+    public GameObject obstaclePrefabother;
 
-    
+    private GameObject instanceCache;
+
+
+
 
     float zSpread;
     float lastzPos;
@@ -34,11 +37,13 @@ public class ObstacleGenerator : MonoBehaviour
             float lanePos = Random.Range(1, 2);
             lanePos = lanePos - 1;
             
-            Instantiate(obstaclePrefab, new Vector3(lanePos, -0.2f, lastzPos + zSpread + zDistance - 4), Quaternion.identity);
 
+          instanceCache = Instantiate(obstaclePrefab, new Vector3(lanePos, -0.2f, lastzPos + zSpread + zDistance - 5), Quaternion.identity);
+                Destroy(instanceCache, 5);
+            
             lanePos = lanePos + 0;
-            Instantiate(obstaclePrefabother, new Vector3(lanePos, -0.3f, lastzPos + zSpread + zDistance + 3), Quaternion.identity);
-
+          instanceCache = Instantiate(obstaclePrefabother, new Vector3(lanePos, -0.3f, lastzPos + zSpread + zDistance + 5), Quaternion.identity);
+                Destroy(instanceCache, 5);
             lastzPos += zSpread;
             zSpread = Random.Range(minSpread, maxSpread);
         }
