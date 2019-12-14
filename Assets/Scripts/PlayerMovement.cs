@@ -1,33 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     
     Vector3 startPos;
-
+    
+    
     public int Basış;
     public int Gelen;
 
-
+    
     public float speed;
     public  bool isOnGround;
     private Rigidbody rb;
     public bool Fail;
+    
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         startPos = this.transform.position;
         Gelen = 1;
+        
     }
     
 
     
     void Update()
     {
-       if(Fail == false)
+        
+        if (Fail == false)
         {
             
             if (isOnGround == true)
@@ -45,13 +49,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 Basış = Basış + 1;
                 transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, 0, speed), Time.deltaTime * (Basış - Gelen) );
+               
             }
             
         }
         else
         {
             Destroy(this.gameObject);
+            Debug.Log("OYUN BİTTİ");
         }
+        
+        
+       
         
     }
     private void OnCollisionEnter(Collision collision)

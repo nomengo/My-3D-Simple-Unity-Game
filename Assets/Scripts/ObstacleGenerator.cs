@@ -39,11 +39,13 @@ public class ObstacleGenerator : MonoBehaviour
             
 
           instanceCache = Instantiate(obstaclePrefab, new Vector3(lanePos, -0.2f, lastzPos + zSpread + zDistance - 5), Quaternion.identity);
-                Destroy(instanceCache, 5);
+                Destroy(instanceCache, 10);
             
             lanePos = lanePos + 0;
+
           instanceCache = Instantiate(obstaclePrefabother, new Vector3(lanePos, -0.3f, lastzPos + zSpread + zDistance + 5), Quaternion.identity);
-                Destroy(instanceCache, 5);
+                Destroy(instanceCache, 10);
+
             lastzPos += zSpread;
             zSpread = Random.Range(minSpread, maxSpread);
         }
