@@ -27,7 +27,7 @@ public class InfiniteRoadGenerator : MonoBehaviour
     void Update()
     {
 
-        if (FindObjectOfType<CameraController>().Player != null)
+        if (FindObjectOfType<CameraController1>().Player != null)
         {
             if (Player.transform.position.z >= 40 * Sayaç)
             {

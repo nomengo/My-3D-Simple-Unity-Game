@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     
     public int Basış;
     public int Gelen;
+    public int Money;
 
     
     public float speed;
@@ -49,7 +50,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 Basış = Basış + 1;
                 transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, 0, speed), Time.deltaTime * (Basış - Gelen) );
-               
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
             
         }
@@ -77,6 +85,11 @@ public class PlayerMovement : MonoBehaviour
         if(collision.collider.tag == "Jumper")
         {
             rb.AddForce(new Vector3(0, 15, 0), ForceMode.Impulse);
+        }
+        if(collision.collider.tag == "Money")
+        {
+            collision.gameObject.SetActive(false);
+            Money = Money + 1;
         }
     
         
