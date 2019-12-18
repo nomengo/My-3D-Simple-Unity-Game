@@ -9,6 +9,7 @@ public class CameraController1 : MonoBehaviour
     public Text Score;
     public float Mesafe;
     public Text Para;
+    public GameObject GameOverScreen;
 
     private Vector3 offset;
 
@@ -39,7 +40,13 @@ public class CameraController1 : MonoBehaviour
     void LateUpdate()
     {
         if (Player != null)
+        {
             transform.position = Player.transform.position + offset;
+        }
+        else
+        {
+            GameOverScreen.SetActive(true);
+        }
     }
 
 }

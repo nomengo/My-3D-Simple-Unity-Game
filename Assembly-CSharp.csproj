@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\InfiniteRoadGenerator.cs" />
     <Compile Include="Assets\Scripts\ObstacleGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nomen/Documents/My Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
