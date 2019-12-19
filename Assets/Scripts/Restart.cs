@@ -9,5 +9,9 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene("My Unity Game");
     }
+    public void WhenClick()
+    {
+        SceneManager.LoadScene("My Unity Game");
+    }
    
 }

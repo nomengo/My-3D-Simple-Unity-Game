@@ -32,7 +32,7 @@ public class CameraController1 : MonoBehaviour
         }
         else
         {
-            Score.text = "Gidilen Mesafe : " + Mesafe.ToString();
+            Score.text = "Traveled Distance : " + Mesafe.ToString();
         }
     }
 
